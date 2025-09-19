@@ -12,7 +12,7 @@ Transformer takes in a string of tokens (corresponding to a piece of text), pass
 
 - Tokenization: the model has a predefined vocabulary of tokens, which the input text is tokenized into (by some handmade algorithm)
 - Embedding: each token is associated with a high-dimensional vector (determined by training an "embedding matrix" wherein each column corresponds to the vector of a token, beginning random but learning through data) that somehow "encodes the meaning" of the token to the transformer. tokens with similar meanings tend to have nearby vectors.
-- the string of tokens undergo an operation within an "attention block," wherein tokens are able to exchange information with eachother (note the difference between "fashion model" and "AI model" can only be distinguished through surrounding context; note that a king that was tyrannical has a much different semantic feel than one who was benevolent)
+- the string of tokens undergo an operation within an "attention block," wherein tokens are able to exchange information with eachother (an attention block has a fixed "context size," for GPT-3 it was 2048 tokens) (note the difference between "fashion model" and "AI model" can only be distinguished through surrounding context; note that a king that was tyrannical has a much different semantic feel than one who was benevolent)
 - they then undergo an operation within a "feed forward layer," wherein tokens independently update themselves based on some function
 - these two previous processes repeat many times
 - at the end, the hope is that the essential meaning of the preceding text is represented in the final vector. we can then perform an operation on that vector to produce the output probability distribution over all possible tokens
